@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+
+<body>
+
+  <% if(users.length == 0) { %>
+    <h1>User not found</h1>
+
+  <% } %>
+
+  <% for (var i= users.length-1 ; i>=0 ; i--) { %>
+    <div class="card m-5" id='<%= users[i].name %>'>
+      <div class="card-header">
+        <strong><%= users[i].name %></strong>
+      </div>
+      <div class="card-body">
+        <blockquote class="blockquote mb-0">
+          <p> Hi I am <%= users[i].name %> and I live in <strong><%= users[i].city %></strong></p>
+          <footer class="blockquote-footer"><cite title="Source Title"></cite>@<%= users[i].email %></cite></footer>
+        </blockquote>
+      </div>
+    </div>
+    <br>
+   <% } %>   
+
+
+</body>
+
+</html>
+
